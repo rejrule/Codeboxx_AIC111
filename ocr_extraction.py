@@ -39,13 +39,13 @@ OCR_ROI = os.getenv("OCR_ROI", "bottom25").lower()
 AZ_ENDPOINT = (
     os.getenv("COMPUTER_VISION_ENDPOINT")
     or os.getenv("AZURE_VISION_ENDPOINT")
-    or os.getenv("https://REDACTED.cognitiveservices.azure.com/")
+    or os.getenv("code go here")
     or ""
 )
 AZ_KEY = (
     os.getenv("COMPUTER_VISION_KEY")
     or os.getenv("AZURE_VISION_KEY")
-    or os.getenv("REDACTED_AZURE_KEY")
+    or os.getenv("")
     or ""
 )
 OCR_URL = AZ_ENDPOINT.rstrip("/") + "/vision/v3.1/ocr"
