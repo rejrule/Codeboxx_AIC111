@@ -56,3 +56,4 @@ notebooks/*.csv
 notebooks/*.json
 notebooks/*.png
 notebooks/*.jpg
+.env
