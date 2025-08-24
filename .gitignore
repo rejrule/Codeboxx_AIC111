@@ -57,3 +57,4 @@ notebooks/*.json
 notebooks/*.png
 notebooks/*.jpg
 .env
+replacements.txt
