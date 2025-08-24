@@ -1,0 +1,58 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+*.egg
+.Python
+.env
+.venv/
+venv/
+ENV/
+env/
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+*.ipynb_checkpoint/
+
+# --- OS / IDE ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# --- Logs & cache ---
+*.log
+*.tmp
+*.cache/
+*.pytest_cache/
+.mypy_cache/
+.pytest_cache/
+coverage/
+
+# --- Data heavy files ---
+data/frames_raw/
+data/frames_sorted/
+data/videos/
+
+# --- Deliverables ---
+deliverables/*.avi
+deliverables/*.mp4
+deliverables/*.mov
+deliverables/*.zip
+deliverables/*.tar.gz
+
+# --- AWS SAM ---
+.aws-sam/
+.aws/
+aws/test-inference/.aws-sam/
+aws/test-inference/.gradle/
+aws/test-inference/__pycache__/
+
+# --- Notebooks outputs ---
+notebooks/*.csv
+notebooks/*.json
+notebooks/*.png
+notebooks/*.jpg
