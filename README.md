@@ -62,9 +62,7 @@ Codeboxx_AIC111/
 $env:AZURE_CV_ENDPOINT=""
 $env:AZURE_CV_KEY=""
 
-# Git Bash
-export AZURE_CV_ENDPOINT="https://REDACTED.cognitiveservices.azure.com/"
-export $1$2REDACTED_AZURE_KEY$3
+
 
 # 2) Lancer le script
 python src/ocr_extraction.py
