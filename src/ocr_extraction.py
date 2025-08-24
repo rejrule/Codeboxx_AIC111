@@ -30,17 +30,19 @@ OCR_ROI    = os.getenv("OCR_ROI", "bottom35").lower()
 
 # Azure endpoint/clé (accepte COMPUTER_VISION_* et AZURE_VISION_* / AZURE_CV_*)
 AZ_ENDPOINT = (
-    os.getenv("COMPUTER_VISION_ENDPOINT")
+    os.getenv("AZURE_CV_ENDPOINT")
+    or os.getenv("COMPUTER_VISION_ENDPOINT")
     or os.getenv("AZURE_VISION_ENDPOINT")
-    or os.getenv("code go here")
     or ""
 )
 AZ_KEY = (
-    os.getenv("COMPUTER_VISION_KEY")
+    os.getenv("AZURE_CV_KEY")
+    or os.getenv("COMPUTER_VISION_KEY")
     or os.getenv("AZURE_VISION_KEY")
-    or os.getenv("code go here")
     or ""
 )
+if not AZ_ENDPOINT or not AZ_KEY:
+    raise RuntimeError("Missing AZURE_CV_ENDPOINT or AZURE_CV_KEY in environment")
 
 if AZ_ENDPOINT and not AZ_ENDPOINT.endswith("/"):
     AZ_ENDPOINT += "/"
