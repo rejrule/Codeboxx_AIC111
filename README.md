@@ -1,16 +1,20 @@
 # AIC-111 – Video Reconstruction
 
 ## 1) Objectif
+
 Reconstituer des vidéos d'ascenseur à partir de frames mélangées en :
+
 - Extrayant date + numéro de frame via **Azure OCR**
 - Classant/renommant les frames
 - **Reconstruisant** des vidéos propres avec **OpenCV**
 - Déployant un petit endpoint **AWS SAM** (PyTorch inference)
 
 ## 2) Arborescence
+
 (voir structure du repo)
 
 ## 3) Installation
+
 ```bash
 python -m venv .venv && source .venv/bin/activate   # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
@@ -66,3 +70,33 @@ $env:AZURE_CV_KEY=""
 
 # 2) Lancer le script
 python src/ocr_extraction.py
+
+
+# 3) Activer venv
+source .venv/Scripts/activate
+
+# 4) Partir OCR avec 20 images seulement
+$env:AZURE_CV_ENDPOINT=""
+$env:AZURE_CV_KEY=""
+
+export MAX_IMAGES=20
+export OCR_SLEEP=0.40
+export VERBOSE=1
+export OCR_DEBUG=0
+
+python src/ocr_extraction.py
+```
+
+
+
+# 1) Vidéo unique, ordre CSV, avec overlay date/frame
+python src/video_reconstruction.py --use-csv --fps 15 --overlay
+
+# 2) Un MP4 par date (nécessite le CSV et frames_sorted)
+python src/video_reconstruction.py --use-csv --split-by-date --fps 15 --overlay
+
+# 3) Rapide sans CSV, tout ce qu’il trouve
+python src/video_reconstruction.py --fps 15
+
+# 4) Tester sur 20 images seulement
+python src/video_reconstruction.py --use-csv --fps 15 --limit 20 --overlay
