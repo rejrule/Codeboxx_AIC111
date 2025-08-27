@@ -1,0 +1,8 @@
+{
+  "resource": "/classify_digit",
+  "path": "/classify_digit",
+  "httpMethod": "POST",
+  "headers": { "Content-Type": "application/json" },
+  "isBase64Encoded": false,
+  "body": "{\"x\": 2}"
+}
